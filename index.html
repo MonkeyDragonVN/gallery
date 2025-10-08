@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Unreal Scene Web Viewer</title>
-  <style>
-    body { margin: 0; overflow: hidden; }
-  </style>
-</head>
-<body>
-  <script type="module" src="main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>3D Web Walkthrough</title>
+    <style>
+      html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #111; }
+      canvas { display: block; }
+      .hud {
+        position: fixed; top: 12px; left: 12px; padding: 10px 12px;
+        background: rgba(0,0,0,0.4); color: #fff; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        border-radius: 10px; font-size: 14px; line-height: 1.4;
+        backdrop-filter: blur(6px);
+      }
+      .hint {
+        position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
+        color: #ddd; opacity: 0.8; font-size: 13px; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: rgba(0,0,0,0.35); padding: 6px 10px; border-radius: 8px;
+      }
+      a { color: #9ddcff; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <div class="hud">
+      <div><strong>3D Web Walkthrough</strong></div>
+      <div>Click to lock mouse • Move with <b>W A S D</b> • Look around with mouse</div>
+      <div>Press <b>Esc</b> to unlock</div>
+    </div>
+    <div class="hint">Tip: Put your model at <code>/assets/sample.glb</code> (or keep this demo room)</div>
+    <script type="module" src="./main.js"></script>
+  </body>
 </html>
